@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+    <style>
+
+        body {
+            background-color: rgb(35, 22, 44);
+        }
+        @keyframes spin {
+            to {transform: rotate(360deg); }
+        }
+        .loader1 {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+
+            border-top: 8px solid rgba(255, 255, 255, 1);
+            border-left: 8px solid rgba(255, 255, 255, 1);
+            border-right: 8px solid rgba(255, 255, 255, 0);
+
+            animation: spin 0.575s infinite linear;
+            display: block;
+            margin-left: 20%;
+            margin-right: auto;
+            margin-top: 20%;
+        }
+
+        @keyframes pulse {
+                0% {
+                    transform: scale(0.15);
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 0;
+                }
+            }
+        .loader2 {
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
+            background: white;
+            animation: pulse 0.85s infinite linear;
+
+            display: block;
+            margin-left: 45%;
+            margin-right: auto;
+            margin-top: -5%;
+        }
+
+        @keyframes tick {to {transform: rotate(359deg); } }
+
+        .loader3 {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2px solid #f9f9f9;
+            margin-left: 65%;
+            margin-top: -5%;
+        }
+
+        .loader3::after {
+            content: "";
+            position: absolute;
+            bottom: 32px;
+            left: 30px;
+            display: block;
+            transform-origin: 0% 100%;
+            width: 1px;
+            height: 24px;
+            background: #f9f9f9;
+            animation: tick 1s infinite linear;
+        }
+
+        @keyframes load {
+            0% {
+                box-shadow: 0 0 #ed3b65 inset;
+            }
+            100% {
+                box-shadow: 0 -70px #ed3b65 inset;
+            }
+        }
+
+        .loader4 {
+            transform: perspective(140px) rotateX(-45deg);
+
+            width: 32px;
+            height: 72px;
+            position: relative;
+            border: 2px solid white;
+            animation: load 1.2s linear infinite alternate;
+            margin-left: 85%;
+            margin-top: -5%;
+        }
+        h1 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste em seu website!</h1>
+    <div class="loader1"></div>
+    <div class="loader2"></div>
+    <div class="loader3"></div>
+    <div class="loader4"></div>
+
+
+
+
+
+</body>
+</html>
